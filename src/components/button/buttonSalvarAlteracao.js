@@ -1,9 +1,13 @@
-import { StyleSheet, Text, View, Image, TextInput, Pressable, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-export default function ButtonD() {
+export default function ButtonD({navigation}) {
+  const pagTeste = () => {
+    navigation.navigate("Principal")
+  }
+
     return (
-        <View style={styles.containerButton}>
-        <TouchableOpacity style={styles.button}>
+      <View style={styles.containerButton}>
+        <TouchableOpacity style={styles.button} onPress={() => pagTeste()}>
           <Text style={styles.textButton}>Salvar alterações</Text>
         </TouchableOpacity>
       </View>

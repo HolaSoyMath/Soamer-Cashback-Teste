@@ -1,26 +1,29 @@
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 import home from '../../images/menu-bar/home.png'
 import pix from '../../images/menu-bar/historico.png'
 import ponteiras from '../../images/menu-bar/ponteiras.png'
 import perfil from '../../images/menu-bar/perfil.png'
 
-export default function MenuBar({option}) {
 
+export default function MenuBar(option) {
   return (
     <View style={stylesMenuBar.container}>
       <View style={stylesMenuBar.containerMenuBar}>
-        <View style={[option == 1 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}>
+        <TouchableOpacity style={[option == 1 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}>
           <Image source={home} style={stylesMenuBar.iconeHome}/>
-        </View>
-        <View style={[option == 2 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={[option == 2 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}>
           <Image source={pix} style={stylesMenuBar.iconePix}/>
-        </View>
-        <View style={[option == 3 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={[option == 3 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}>
           <Image source={ponteiras} style={stylesMenuBar.iconeCar}/>
-        </View>
-        <View style={[option == 4 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={[option == 4 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}>
           <Image source={perfil} style={stylesMenuBar.iconePerfil}/>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );

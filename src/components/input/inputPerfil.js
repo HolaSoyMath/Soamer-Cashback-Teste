@@ -6,10 +6,10 @@ export default function inputPerfil({icone, nome, editar}) {
     return (
         <View style={[styles.containerInput]}>
             <Image source={icone} style={styles.iconPerfil} />
-                <TextInput style={styles.input} placeholder={nome}>
+                <TextInput style={styles.input} placeholder={nome} >
 
                 </TextInput>
-            <Image source={iconEditar} style={styles.iconEditar} />
+            {editar == 1 && <Image source={iconEditar} style={styles.iconEditar} />}
         </View>
     );
 }
