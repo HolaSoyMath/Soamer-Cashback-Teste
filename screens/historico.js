@@ -5,20 +5,13 @@ import CalendarioHistorico from '../src/components/historico/calendario_filtro.j
 import iconFiltro from '../src/images/historico/filtro.png'
 import iconVoltar from '../src/images/comum/voltar.png'
 import BlocoVendas from '../src/components/historico/vendas.js'
+import MenuBar from '../src/components/menu-bar/index'
 
 
 
 export default function Historico(props){
   return(
     <View style={styleHeader.principal}>
-      <View style={styleHeader.containerVoltar}>
-        <View>
-          <TouchableOpacity style={styleVoltar.containerVoltar} onPress={() => props.navigation.navigate('Perfil')}>
-            <Image source={iconVoltar} style={styleVoltar.iconVoltar}></Image>
-            <Text style={styleVoltar.textVoltar}>Voltar</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
       <View style={styleHeader.containerHeader}>
         <View style={[styleHeader.centralizar, styleHeader.containerTitulo]}>
           <Text style={styleHeader.textoTitulo}>Histórico</Text>
@@ -48,10 +41,17 @@ export default function Historico(props){
             <BlocoVendas ponteira={'Ponteira de bocal único Black Piano'} veiculo={'TOYOTA YARIS SEDAN'} status={1}/>
         </View>
       </ScrollView>
+        <MenuBar option = {3} props={props}></MenuBar>
     </View>
   )
 }
 const corBackground = '#1e1e1e';
+
+const stylesMenuBar = StyleSheet.create({
+  container: {
+    backgroundColor: '#F2F2F2',
+  },
+});
 
 const styleBody = StyleSheet.create({
   principal: {
@@ -90,8 +90,6 @@ const styleBody = StyleSheet.create({
     borderRadius: 10,
     paddingLeft: 20,
   },
-  
-  
 })
 
 const styleHeader = StyleSheet.create({
@@ -99,19 +97,11 @@ const styleHeader = StyleSheet.create({
     principal: {
       height: '100%',
       width: '100%',
-      backgroundColor: '#F2F2F2',
+      backgroundColor: '#f2f2f2',
     },
     centralizar: {
       alignItems: 'center', 
       justifyContent: 'center', 
-    },
-    containerVoltar:{
-      backgroundColor: corBackground,
-      height: '9%',
-      width: '100%',
-      paddingTop: 40,
-      paddingLeft: 30,
-      paddingRight: 30,
     },
     containerHeader: {
       backgroundColor: corBackground,
@@ -119,6 +109,7 @@ const styleHeader = StyleSheet.create({
       width: '100%',
       paddingLeft: 30,
       paddingRight: 30,
+      paddingTop: 10,
       alignItems: 'center',
     },
     containerTitulo: {
@@ -160,21 +151,4 @@ const styleHeader = StyleSheet.create({
       borderTopRightRadius: 10,
       borderBottomRightRadius: 10,
     }
-})
-
-const styleVoltar = StyleSheet.create({
-  containerVoltar: {
-    flexDirection: 'row',
-    width: '100%',
-    height: 20
-  },
-  iconVoltar: {
-    height: 20,
-    width: 20,
-  },
-  textVoltar: {
-    color: '#fff',
-    fontSize: 20,
-    marginLeft: 8,
-  }
 })

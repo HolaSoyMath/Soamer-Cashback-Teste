@@ -1,13 +1,10 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function ButtonD({navigation}) {
-  const pagTeste = () => {
-    navigation.navigate("Principal")
-  }
 
     return (
       <View style={styles.containerButton}>
-        <TouchableOpacity style={styles.button} onPress={() => pagTeste()}>
+        <TouchableOpacity style={styles.button}>
           <Text style={styles.textButton}>Salvar alterações</Text>
         </TouchableOpacity>
       </View>
@@ -20,6 +17,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 20,
+        
       },
       button: {
         width: 200,

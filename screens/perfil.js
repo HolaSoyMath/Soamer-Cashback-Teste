@@ -14,9 +14,7 @@ import { NavigationContainer } from '@react-navigation/native'
 export default function Perfil(props) {
 
   return (
-
-
-    <View>
+    <View style={styles.principal}>
       <View style={styles.containerHeader}>
         <Image source={detalheTopo} style={styles.image}/> 
         <Text style={styles.textHeader}>Matheus Guimarães</Text>
@@ -55,31 +53,31 @@ export default function Perfil(props) {
             </View>
           </View>
         </View>
-
-
+        <View style={stylesButton.container}>
+          <ButtonSaveAlt> </ButtonSaveAlt>
+        </View>
       </View>
-
-      <View style={stylesButton.container}>
-        <ButtonSaveAlt> </ButtonSaveAlt>
-      </View>
-
-      <View style={stylesMenuBar.container}>
-        <MenuBar option = {4}></MenuBar>
-      </View>
-        
+      <MenuBar option = {4} props={props}></MenuBar>
     </View> 
   );
 }
 
-
+const stylesButton = StyleSheet.create({
+  container: {
+    height: 100,
+  },
+});
 
 const styles = StyleSheet.create({
-  // Tpo da página
+  principal: {
+    width: '100%',
+    height: '100%',
+  },
   containerHeader: {
     backgroundColor: '#1e1e1e',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    height: 200,
+    height: 170,
   },
   textHeader: {
     color: "#fff",
@@ -154,18 +152,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const stylesMenuBar = StyleSheet.create({
-  container: {
-    height: 10,
-    marginTop: 50,
-  },
-});
 
-const stylesButton = StyleSheet.create({
-  container: {
-    height: 115,
-  },
-});
 
 
 const styles2 = StyleSheet.create({

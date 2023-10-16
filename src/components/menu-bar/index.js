@@ -5,7 +5,24 @@ import ponteiras from '../../images/menu-bar/ponteiras.png'
 import perfil from '../../images/menu-bar/perfil.png'
 
 
-export default function MenuBar(option) {
+export default function MenuBar({option, props}) {
+
+  const pagHome = () => {
+    props.navigation.navigate("Perfil")
+  }
+
+  const pagBeneficio = () => {
+    props.navigation.navigate("Perfil")
+  }
+
+  const pagHistorico = () => {
+    props.navigation.navigate("Historico")
+  }
+
+  const pagPerfil = () => {
+    props.navigation.navigate("Perfil")
+  }
+
   return (
     <View style={stylesMenuBar.container}>
       <View style={stylesMenuBar.containerMenuBar}>
@@ -17,11 +34,11 @@ export default function MenuBar(option) {
           <Image source={pix} style={stylesMenuBar.iconePix}/>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[option == 3 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}>
+        <TouchableOpacity style={[option == 3 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]} onPress={() => pagHistorico()}>
           <Image source={ponteiras} style={stylesMenuBar.iconeCar}/>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[option == 4 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}>
+        <TouchableOpacity style={[option == 4 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]} onPress={() => pagPerfil()}>
           <Image source={perfil} style={stylesMenuBar.iconePerfil}/>
         </TouchableOpacity>
       </View>
@@ -31,11 +48,7 @@ export default function MenuBar(option) {
 
 const stylesMenuBar = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'flex-end',
-    height: 50,
   },
   containerMenuBar: {
     flex: 0,
@@ -48,7 +61,7 @@ const stylesMenuBar = StyleSheet.create({
     borderRadius: 50,
     paddingLeft: 30,
     paddingRight: 30,
-    marginBottom: 30
+    marginBottom: 10
   },
   espacoIcones:{
     padding: 1,
