@@ -5,6 +5,7 @@ import imgInferior from '../src/images/login/detalheInferior.png'
 import imgLogo from '../src/images/login/logo.png'
 import imgSenha from '../src/images/login/senha.png'
 import InputLogin from '../src/components/input/inputLogin.js'
+import ButtonEntrar from '../src/components/button/buttonEntrar.js'
 
 export default function AlterarSenha(props){
 
@@ -41,9 +42,7 @@ export default function AlterarSenha(props){
           />
         </View>
         <View style={{marginTop: 50}}>
-          <TouchableOpacity style={stylesBody.containerEntrar} onPress={() => props.navigation.navigate('Perfil')}>
-            <Text style={stylesBody.textoBotao}>Confirmar</Text>
-          </TouchableOpacity>
+          <ButtonEntrar texto='Confirmar' props={props} nmTela='Home' />
         </View>
       </View>
       <Image source={imgInferior} style={stylesBody.imgInferior}/>

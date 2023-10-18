@@ -1,17 +1,20 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, StatusBar } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native'
 import imgSuperior from '../src/images/login/detalheSuperior.png'
 import imgInferior from '../src/images/login/detalheInferior.png'
 import imgLogo from '../src/images/login/logo.png'
 import imgPerfil from '../src/images/login/info-pessoal.png'
 import imgSenha from '../src/images/login/senha.png'
 import InputLogin from '../src/components/input/inputLogin.js'
-
-
-
+import { useFonts } from 'expo-font';
+import ButtonEntrar from '../src/components/button/buttonEntrar.js'
 
 export default function Login(props){
+
+  let [fontsLoaded] = useFonts({
+    'Poppins': require('../src/fonts/poppins/Poppins-Black.ttf'),
+  }); 
+
   return(
     <View style={styles.principal}>
       <StatusBar
@@ -37,9 +40,7 @@ export default function Login(props){
           <InputLogin icone={imgSenha} texto={'Senha'} senha={true}></InputLogin>
         </View>
         <View style={{marginTop: 50}}>
-          <TouchableOpacity style={stylesBody.containerEntrar} onPress={() => props.navigation.navigate('AlterarSenha')}>
-            <Text style={stylesBody.textoBotao}>Entrar</Text>
-          </TouchableOpacity>
+          <ButtonEntrar texto='Entrar' props={props} nmTela='AlterarSenha' />
         </View>
       </View>
       <Image source={imgInferior} style={stylesBody.imgInferior}/>
@@ -74,11 +75,7 @@ const stylesBody = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  textoBotao:{
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 20
-  },
+  
   imgInferior:{
     position:'absolute',
     marginTop: 514,

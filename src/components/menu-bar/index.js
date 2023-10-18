@@ -8,7 +8,7 @@ import perfil from '../../images/menu-bar/perfil.png'
 export default function MenuBar({option, props}) {
 
   const pagHome = () => {
-    props.navigation.navigate("Perfil")
+    props.navigation.navigate("Home")
   }
 
   const pagBeneficio = () => {
@@ -26,7 +26,7 @@ export default function MenuBar({option, props}) {
   return (
     <View style={stylesMenuBar.container}>
       <View style={stylesMenuBar.containerMenuBar}>
-        <TouchableOpacity style={[option == 1 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}>
+        <TouchableOpacity style={[option == 1 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]} onPress={() => pagHome()}>
           <Image source={home} style={stylesMenuBar.iconeHome}/>
         </TouchableOpacity>
 
@@ -61,7 +61,8 @@ const stylesMenuBar = StyleSheet.create({
     borderRadius: 50,
     paddingLeft: 30,
     paddingRight: 30,
-    marginBottom: 10
+    marginBottom: 5,
+    marginTop: 5
   },
   espacoIcones:{
     padding: 1,

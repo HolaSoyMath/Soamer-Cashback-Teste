@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-import Perfil from './screens/perfil';
-import Historico from './screens/historico';
+import { StyleSheet } from 'react-native'
+import { createStackNavigator } from '@react-navigation/stack'
+import { NavigationContainer } from '@react-navigation/native'
+import Perfil from './screens/perfil'
+import Historico from './screens/historico'
 import Login from './screens/login'
 import AlterarSenha from './screens/alterarSenha'
+import Home from './screens/home'
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,14 @@ function MyStack() {
       <Stack.Screen 
         name="AlterarSenha" 
         component={AlterarSenha}
+        options={{
+          title: '',
+          headerTransparent: true,
+          headerShown: false,
+      }} />
+      <Stack.Screen
+        name="Home" 
+        component={Home}
         options={{
           title: '',
           headerTransparent: true,

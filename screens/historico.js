@@ -47,12 +47,6 @@ export default function Historico(props){
 }
 const corBackground = '#1e1e1e';
 
-const stylesMenuBar = StyleSheet.create({
-  container: {
-    backgroundColor: '#F2F2F2',
-  },
-});
-
 const styleBody = StyleSheet.create({
   principal: {
     paddingLeft: 30,
@@ -93,11 +87,9 @@ const styleBody = StyleSheet.create({
 })
 
 const styleHeader = StyleSheet.create({
-    // Tpo da página
     principal: {
       height: '100%',
       width: '100%',
-      backgroundColor: '#f2f2f2',
     },
     centralizar: {
       alignItems: 'center', 
