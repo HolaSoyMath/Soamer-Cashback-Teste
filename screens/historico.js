@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, Image, Pressable, ScrollView, TouchableOpacity } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import CalendarioHistorico from '../src/components/historico/calendario_filtro.js'
@@ -6,10 +6,11 @@ import iconFiltro from '../src/images/historico/filtro.png'
 import iconVoltar from '../src/images/comum/voltar.png'
 import BlocoVendas from '../src/components/historico/vendas.js'
 import MenuBar from '../src/components/menu-bar/index'
-
+import Modal from '../src/components/modal.js';
 
 
 export default function Historico(props){
+  const [modal, setModal] = useState(false)
   return(
     <View style={styleHeader.principal}>
       <View style={styleHeader.containerHeader}>
@@ -30,7 +31,7 @@ export default function Historico(props){
         <View style={styleBody.principal}>
             <View style={styleBody.containerFiltro}>
               <Text style={styleBody.textoVenda}>Suas vendas</Text>
-              <Pressable style={styleBody.btnFiltro}>
+              <Pressable style={styleBody.btnFiltro} onPress={() => setModal(true)}>
                 <Image source={iconFiltro} style={styleBody.imgFiltro}/>
                 <Text style={styleBody.textoFiltro}>Filtrar</Text>
               </Pressable>
@@ -41,7 +42,12 @@ export default function Historico(props){
             <BlocoVendas ponteira={'Ponteira de bocal único Black Piano'} veiculo={'TOYOTA YARIS SEDAN'} status={1}/>
         </View>
       </ScrollView>
-        <MenuBar option = {3} props={props}></MenuBar>
+      <MenuBar option = {3} props={props}></MenuBar>
+      <Modal 
+        show={modal}
+        
+        close={() => setModal(false)}
+      />
     </View>
   )
 }

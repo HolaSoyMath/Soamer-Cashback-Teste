@@ -29,7 +29,7 @@ export default function PagInicial(props) {
                         <Text style={styles.points}>$ 100.00</Text>
                     </View>
                     <View>
-                        <ButtonVenda/>
+                        <ButtonVenda onPress={() => props.navigation.navigate("ScannerScreen")}/>
                     </View>
                 </View>
                 <View style={styles.main}>

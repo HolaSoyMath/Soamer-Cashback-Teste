@@ -16,6 +16,7 @@ export default function ScannerScreen(props) {
  const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     alert(`Código de barras escaneado: ${data}`);
+    props.navigation.navigate("VendaRegistrada");
  };
 
  if (hasPermission === null) {
