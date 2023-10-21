@@ -12,7 +12,7 @@ export default function MenuBar({option, props}) {
   }
 
   const pagBeneficio = () => {
-    props.navigation.navigate("Perfil")
+    props.navigation.navigate("Beneficios")
   }
 
   const pagHistorico = () => {
@@ -26,19 +26,23 @@ export default function MenuBar({option, props}) {
   return (
     <View style={stylesMenuBar.container}>
       <View style={stylesMenuBar.containerMenuBar}>
-        <TouchableOpacity style={[option == 1 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]} onPress={() => pagHome()}>
+        <TouchableOpacity style={[option == 1 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]} 
+        onPress={() => pagHome()}>
           <Image source={home} style={stylesMenuBar.iconeHome}/>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[option == 2 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}>
+        <TouchableOpacity style={[option == 2 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]}
+        onPress={() => pagBeneficio()}>
           <Image source={pix} style={stylesMenuBar.iconePix}/>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[option == 3 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]} onPress={() => pagHistorico()}>
+        <TouchableOpacity style={[option == 3 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]} 
+        onPress={() => pagHistorico()}>
           <Image source={ponteiras} style={stylesMenuBar.iconeCar}/>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[option == 4 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]} onPress={() => pagPerfil()}>
+        <TouchableOpacity style={[option == 4 ? [stylesMenuBar.selecionado, stylesMenuBar.espacoIcones] : stylesMenuBar.espacoIcones]} 
+        onPress={() => pagPerfil()}>
           <Image source={perfil} style={stylesMenuBar.iconePerfil}/>
         </TouchableOpacity>
       </View>
@@ -62,7 +66,7 @@ const stylesMenuBar = StyleSheet.create({
     paddingLeft: 30,
     paddingRight: 30,
     marginBottom: 5,
-    marginTop: 5
+    marginTop: 5,
   },
   espacoIcones:{
     padding: 1,

@@ -6,13 +6,16 @@ import Historico from './screens/historico'
 import Login from './screens/login'
 import AlterarSenha from './screens/alterarSenha'
 import Home from './screens/home'
+import ScannerScreen from './screens/scannerScreen'
+import Beneficios from './screens/beneficios'
 
 const Stack = createStackNavigator();
 
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
+      
+      {/* <Stack.Screen 
         name="Login" 
         component={Login}
         options={{
@@ -27,10 +30,18 @@ function MyStack() {
           title: '',
           headerTransparent: true,
           headerShown: false,
-      }} />
+      }} /> */}
       <Stack.Screen
         name="Home" 
         component={Home}
+        options={{
+          title: '',
+          headerTransparent: true,
+          headerShown: false,
+      }} />
+      <Stack.Screen 
+        name="Beneficios" 
+        component={Beneficios}
         options={{
           title: '',
           headerTransparent: true,
@@ -52,6 +63,15 @@ function MyStack() {
           headerTransparent: true,
           headerShown: false,
       }} />
+      <Stack.Screen 
+        name="ScannerScreen" 
+        component={ScannerScreen}
+        options={{
+          title: '',
+          headerTransparent: true,
+          headerShown: false,
+      }} />
+      
     </Stack.Navigator>
   );
 }
