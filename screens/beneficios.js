@@ -33,7 +33,7 @@ export default function Beneficios(props) {
         <View>
           <TouchableOpacity style={styles.btnfinalizar}
             onPress={this._onPressButton}>
-              <Text style={{color:'white'}}> Finalizar </Text>
+              <Text style={{color:'white', fontSize: 20, fontWeight: 'bold'}}> Finalizar </Text>
             </TouchableOpacity>
         </View>    
 
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   },
   sifra:{
     // $ 
-    fontSize:30,
+    fontSize:70,
     color:"rgba(242, 242, 242, 0.29)",
     marginRight:10,
     paddingVertical:10,
@@ -97,17 +97,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     color:"#F2F2F2",
     marginBottom:7,
-    fontSize:30,
+    fontSize:70,
     marginTop:10,
   },
   //botao para finalizar
   btnfinalizar:{
     marginLeft:100,
     width:200,
+    height: 60,
     padding:10,
-    marginTop:20,
+    marginTop:70,
     fontSize:30,
     alignItems:'center',
+    justifyContent: 'center',
     color:'white',
     borderColor:"#2A59C2",
     borderWidth:5,
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
   inputpix:{
     flexDirection:'row',
     alignContent:'space-between',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     borderColor:'rgba(242, 242, 242, 0.4)',
     borderBottomWidth:2,
     paddingBottom:30,

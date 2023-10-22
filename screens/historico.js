@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, Image, Pressable, ScrollView, TouchableOpacity } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native'
 import CalendarioHistorico from '../src/components/historico/calendario_filtro.js'
 import iconFiltro from '../src/images/historico/filtro.png'
-import iconVoltar from '../src/images/comum/voltar.png'
 import BlocoVendas from '../src/components/historico/vendas.js'
 import MenuBar from '../src/components/menu-bar/index'
 import Modal from '../src/components/modal.js';
-
 
 export default function Historico(props){
   const [modal, setModal] = useState(false)

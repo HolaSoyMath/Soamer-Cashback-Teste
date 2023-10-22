@@ -47,7 +47,7 @@ function MyStack() {
           title: '',
           headerTransparent: true,
           headerShown: false,
-      }} />
+      }} /> 
       <Stack.Screen 
         name="Historico" 
         component={Historico}

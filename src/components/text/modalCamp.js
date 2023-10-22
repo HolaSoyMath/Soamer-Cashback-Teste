@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#2A59C2',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 40
+    marginTop: 15
   },
 
   cardPonteira:{
