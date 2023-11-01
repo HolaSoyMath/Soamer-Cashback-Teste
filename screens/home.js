@@ -24,9 +24,15 @@ export default function PagInicial(props) {
                         <Text style={{ color: "#f6f6f6", fontSize: 16, fontWeight: "500", marginLeft: 15 }}>Matheus Guimarães</Text>
                       </TouchableOpacity>
                     </View>
-                    <View style={styles.pontos}>
-                        <Text style={styles.labelPonto}>Seus pontos</Text>
-                        <Text style={styles.points}>$ 100.00</Text>
+                    <View style={styles.containerPontos}>
+                      <View style={styles.pontos}>
+                          <Text style={styles.labelPonto}>Seus pontos</Text>
+                          <Text style={styles.points}>$ 100.00</Text>
+                      </View>
+                      <View style={[styles.pontos, {marginRight: 50}]}>
+                          <Text style={styles.labelPonto}>Validade</Text>
+                          <Text style={styles.points}>3 m 2 d</Text>
+                      </View>
                     </View>
                     <View>
                         <ButtonVenda onPress={() => props.navigation.navigate("ScannerScreen")}/>
@@ -121,6 +127,12 @@ const styles = StyleSheet.create({
       borderRadius: 100,
       height: 50,
       width: 50
+    },
+
+    containerPontos: {
+      flexDirection: 'row', 
+      width: '100%', 
+      justifyContent: 'space-between'
     },
 
     pontos:{

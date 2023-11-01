@@ -73,13 +73,13 @@ const styleStatusVenda = StyleSheet.create({
   },
   ponteira: {
     marginTop: 20,
-    fontSize: 20,
+    fontSize: 18,
     color: '#fff',
     fontWeight:'bold',
     marginLeft: 30
   },
   veiculo: {
-    fontSize: 15,
+    fontSize: 13,
     color: '#fff',
     marginLeft: 30
   },

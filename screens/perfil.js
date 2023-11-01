@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 import MenuBar from '../src/components/menu-bar/index'
 import ButtonSaveAlt from '../src/components/button/buttonSalvarAlteracao.js'
+import ButtonSair from '../src/components/button/buttonSair'
 import InputPerfil from '../src/components/input/inputPerfil.js'
 import detalheTopo from '../src/images/perfil/detalhe-topo.png'
 import foto from '../src/images/perfil/foto-perfil.png'
@@ -9,6 +10,7 @@ import iconEditar from '../src/images/perfil/editar.png'
 import iconEmail from '../src/images/perfil/email.png'
 import iconSenha from '../src/images/perfil/senha.png'
 import iconEndereco from '../src/images/perfil/endereco.png'
+import iconTelefone from '../src/images/perfil/telefone.png'
 import { NavigationContainer } from '@react-navigation/native'
 
 export default function Perfil(props) {
@@ -34,6 +36,8 @@ export default function Perfil(props) {
 
         <InputPerfil icone={iconEmail} nome={'Email'} editar={1}></InputPerfil>
 
+        <InputPerfil icone={iconTelefone} nome={'Telefone'} editar={1}></InputPerfil>
+
         <InputPerfil icone={iconSenha} nome={'Senha'} editar={1}></InputPerfil>
 
         <InputPerfil icone={iconEndereco} nome={'CNPJ'}></InputPerfil>
@@ -54,7 +58,8 @@ export default function Perfil(props) {
           </View>
         </View>
         <View style={stylesButton.container}>
-          <ButtonSaveAlt> </ButtonSaveAlt>
+          <ButtonSaveAlt />
+          <ButtonSair />
         </View>
       </View>
       <MenuBar option = {4} props={props}></MenuBar>
@@ -64,7 +69,9 @@ export default function Perfil(props) {
 
 const stylesButton = StyleSheet.create({
   container: {
-    height: 100,
+    height: 60,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });
 

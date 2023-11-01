@@ -16,7 +16,7 @@ const Stack = createStackNavigator();
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
+      {/* <Stack.Screen 
         name="Login" 
         component={Login}
         options={{
@@ -31,7 +31,7 @@ function MyStack() {
           title: '',
           headerTransparent: true,
           headerShown: false,
-      }} />
+      }} /> */}
       <Stack.Screen
         name="Home" 
         component={Home}
