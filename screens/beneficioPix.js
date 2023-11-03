@@ -27,7 +27,7 @@ export default function BeneficioPix(props) {
         <Text style={styles.subtitulo}>Digite o valor que deseja resgatar </Text>
         <View style={styles.inputpix}>
           <Text style={styles.sifra}>$</Text>
-          <TextInput style={styles.valor} placeholder='100' placeholderTextColor='#fff' keyboardType='numeric' />
+          <TextInput style={styles.valor} placeholder='100' placeholderTextColor='rgba(242, 242, 242, 0.29)' keyboardType='numeric' />
         </View>
         
         <View>
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   //botao para finalizar
   btnfinalizar:{
     marginLeft:100,
-    width:200,
+    width: 200,
     height: 60,
     padding:10,
     marginTop:70,

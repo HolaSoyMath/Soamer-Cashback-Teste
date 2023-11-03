@@ -41,10 +41,10 @@ export default function Beneficios(props) {
               <Image source={iconPix} style={[stylesHeader.iconePix]}/>
             </TouchableOpacity>
             <TouchableOpacity style={[stylesHeader.btn, stylesPrincipal.centralizar]}>
-              <Text>All</Text>
+              <Text style={stylesBody.textoBtn}>All</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[stylesHeader.btn, stylesPrincipal.centralizar]}>
-              <Text>Popular</Text>
+              <Text style={stylesBody.textoBtn}>Popular</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -73,11 +73,14 @@ export default function Beneficios(props) {
 const stylesBody = StyleSheet.create({
   body: {
     width: '100%',
-    height: '61%',
+    height: '51%',
   },
   linhaBeneficio: {
     flexDirection: 'row',
   },
+  textoBtn: {
+    color:'#989898',
+  }
 })
 
 const stylesPrincipal = StyleSheet.create({
@@ -96,7 +99,7 @@ const stylesPrincipal = StyleSheet.create({
 const stylesHeader = StyleSheet.create({
   header: {
     width: '100%',
-    height: '30%',
+    height: '40%',
     alignItems: 'center',
   },
   containerFiltros: {
@@ -106,13 +109,14 @@ const stylesHeader = StyleSheet.create({
   },
   filtro: {
     width: '100%',
-    height: '40%',
+    height: 40,
     backgroundColor: '#E7E7E7',
     borderRadius: 10,
     flexDirection: 'row',
     paddingLeft: '4%',
     paddingRight: '4%',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 15,
   },
   icone: {
     width: '6%',
@@ -128,16 +132,17 @@ const stylesHeader = StyleSheet.create({
     height: '50%',
     marginTop: 10,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   btnPix: {
     height: 40,
     width: '40%',
     // backgroundColor: '#37B5AA',
     borderRadius: 10,
-    borderColor: '#1e1e1e',
+    borderColor: '#E7E7E7',
     borderWidth: 1,
     marginRight: 10,
+    backgroundColor: '#ececec'
   },
   iconePix: {
     width: 84,
@@ -147,9 +152,10 @@ const stylesHeader = StyleSheet.create({
     height: 40,
     width: '27%',
     borderRadius: 10,
-    borderColor: '#1e1e1e',
+    borderColor: '#E7E7E7',
     borderWidth: 1,
     marginRight: 10,
+    backgroundColor: '#ececec'
   },
 })
 
