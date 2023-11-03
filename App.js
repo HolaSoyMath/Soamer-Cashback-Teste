@@ -8,6 +8,7 @@ import AlterarSenha from './screens/alterarSenha'
 import Home from './screens/home'
 import ScannerScreen from './screens/scannerScreen'
 import Beneficios from './screens/beneficios'
+import BeneficioPix from './screens/beneficioPix'
 import VendaRegistrada from './screens/vendaRegistrada'
 
 
@@ -16,7 +17,7 @@ const Stack = createStackNavigator();
 function MyStack() {
   return (
     <Stack.Navigator>
-      {/* <Stack.Screen 
+      <Stack.Screen 
         name="Login" 
         component={Login}
         options={{
@@ -31,7 +32,7 @@ function MyStack() {
           title: '',
           headerTransparent: true,
           headerShown: false,
-      }} /> */}
+      }} />
       <Stack.Screen
         name="Home" 
         component={Home}
@@ -43,6 +44,14 @@ function MyStack() {
       <Stack.Screen 
         name="Beneficios" 
         component={Beneficios}
+        options={{
+          title: '',
+          headerTransparent: true,
+          headerShown: false,
+      }} /> 
+      <Stack.Screen 
+        name="beneficioPix" 
+        component={BeneficioPix}
         options={{
           title: '',
           headerTransparent: true,
