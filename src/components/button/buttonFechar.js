@@ -18,12 +18,12 @@ const styles = StyleSheet.create({
   }
 });
 
-const ButtonFechar = ({title, style, props}) => {
+const ButtonFechar = ({title, style, destino}) => {
   return (
     <View>
-    <TouchableOpacity style={[styles.button, style]} onPress={()=>navigation.navigate('Beneficios')}>
-      <Text style={styles.text}>{title}</Text>
-    </TouchableOpacity>
+      <TouchableOpacity style={[styles.button]} onPress={destino}>
+        <Text style={styles.text2}>{title}</Text>
+      </TouchableOpacity>
     </View>
   );
 };

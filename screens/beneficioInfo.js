@@ -6,7 +6,7 @@ import InputText from '../src/components/input/inputBeneficio';
 import ButtonTrocar from '../src/components/button/buttonTrocarPontos';
 import ButtonFechar from '../src/components/button/buttonFechar';
 
-export default function BeneficioInfo({props}) {
+export default function BeneficioInfo(props) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -25,11 +25,7 @@ export default function BeneficioInfo({props}) {
             />
             <View style={styles.buttons}>
               <ButtonTrocar title= "Trocar pontos"/>
-              <View>
-                <TouchableOpacity style={[styles.button]} onPress={props.navigation.navigate('Beneficios')}>
-                  <Text style={styles.text2}>Fechar</Text>
-                </TouchableOpacity>
-              </View>
+              <ButtonFechar title={'Fechar'} destino={() => props.navigation.navigate('Beneficios')}/>
             </View>
         </View>
       </View>

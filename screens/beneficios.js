@@ -52,7 +52,7 @@ export default function Beneficios(props) {
 
       <ScrollView style={stylesBody.body}>
         <View style={[stylesBody.linhaBeneficio]}>
-          <Card cupom={cpnCB} texto='Cartão presente' pontos='100' telaBen={props.navigation.navigate('BeneficioInfo')}></Card>
+          <Card cupom={cpnCB} texto='Cartão presente' pontos='100' telaBen={() => props.navigation.navigate('BeneficioInfo')}></Card>
           <Card cupom={cpnUber} texto='Gift Card' pontos='100'></Card>
         </View>
         <View style={[stylesBody.linhaBeneficio]}>
