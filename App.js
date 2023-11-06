@@ -10,6 +10,7 @@ import ScannerScreen from './screens/scannerScreen'
 import Beneficios from './screens/beneficios'
 import BeneficioPix from './screens/beneficioPix'
 import VendaRegistrada from './screens/vendaRegistrada'
+import BeneficioInfo from './screens/beneficioInfo'
 
 
 const Stack = createStackNavigator();
@@ -17,7 +18,7 @@ const Stack = createStackNavigator();
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
+      {/* <Stack.Screen 
         name="Login" 
         component={Login}
         options={{
@@ -40,10 +41,18 @@ function MyStack() {
           title: '',
           headerTransparent: true,
           headerShown: false,
-      }} />
+      }} /> */}
       <Stack.Screen 
         name="Beneficios" 
         component={Beneficios}
+        options={{
+          title: '',
+          headerTransparent: true,
+          headerShown: false,
+      }} /> 
+      <Stack.Screen 
+        name="BeneficioInfo" 
+        component={BeneficioInfo}
         options={{
           title: '',
           headerTransparent: true,

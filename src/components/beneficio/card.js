@@ -2,9 +2,9 @@ import React from 'react'
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'  
 
 
-export default function Card({cupom, texto, pontos}) {
+export default function Card({cupom, texto, pontos, telaBen}) {
    return(
-    <TouchableOpacity style={[stylesBody.containerBeneficio]}>
+    <TouchableOpacity style={[stylesBody.containerBeneficio]} onPress={telaBen}>
       <View style={[stylesBody.containerImg, stylesPrincipal.centralizar]}>
         <Image source={cupom} />
       </View>
