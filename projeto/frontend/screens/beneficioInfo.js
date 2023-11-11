@@ -24,7 +24,7 @@ export default function BeneficioInfo(props) {
               imageSource={require('../assets/iconPontos.png')}
             />
             <View style={styles.buttons}>
-              <ButtonTrocar title= "Trocar pontos"/>
+              <ButtonTrocar title= "Trocar pontos" trocar={() => props.navigation.navigate('PontosTrocados')}/>
               <ButtonFechar title={'Fechar'} destino={() => props.navigation.navigate('Beneficios')}/>
             </View>
         </View>

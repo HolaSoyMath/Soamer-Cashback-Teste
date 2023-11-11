@@ -1,0 +1,105 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+//==============TABELAS===================
+
+model User {
+  idUser      Int           @id @default(autoincrement())
+  email       String        @unique
+  password    String
+  cellphone   String
+  cuid        String        @default(cuid()) @unique
+  isNewUser   Boolean       @default(true)
+
+  address Address?
+  seller Seller?
+  carDealerShip CarDealerShip?
+}
+
+model Address {
+  idAddress    Int     @id @default(autoincrement())
+  user        User    @relation(fields: [idUser], references: [idUser])
+  idUser      Int     @unique
+  cep         String?
+  logradouro  String
+  uf          String?
+  numero      String
+  complemento String?
+}
+
+model CarDealerShip {
+  idCarDealerShip Int @id @default(autoincrement())
+  user User @relation(fields: [idUser], references: [idUser])
+  idUser Int @unique
+  cnpj String @unique
+  razaoSocial String
+  nomeFantasia String
+
+  seller Seller?
+}
+
+model Seller {
+  idSeller Int  @id @default(autoincrement())
+  user User     @relation(fields: [idUser], references: [idUser])
+  idUser Int    @unique
+  carDealerShip CarDealerShip @relation(fields: [idCarDealerShip], references: [idCarDealerShip])
+  idCarDealerShip Int @unique
+  sellerName String
+  cpfSeller String
+
+  sellerHistory SellerHistory?
+  sellerTrades SellerTrades?
+}
+
+model SellerTrades {
+  idSellerTrades Int @id @default(autoincrement())
+  seller Seller @relation(fields: [idSeller], references: [idSeller])
+  idSeller Int @unique
+  tradeStatus String
+  cashback Float
+}
+
+
+model Product {
+  idProduct Int @id @default(autoincrement())
+  nameProduct String
+  qtdPontos Int
+  photoUrl String
+  carName String
+
+  sellerHistory SellerHistory?
+  selesCampaigns SelesCampaigns?
+}
+
+
+
+model SellerHistory {
+  idSellerHistory Int @id @default(autoincrement())
+  seller Seller @relation(fields: [idSeller], references: [idSeller])
+  idSeller Int @unique
+  product Product @relation(fields: [idProduct], references: [idProduct])
+  idProduct Int @unique
+  sendDate DateTime 
+  pointsExpirationDate DateTime
+  statusSolicitation String 
+}
+
+
+model SelesCampaigns {
+  idSelesCampaigns Int @id @default(autoincrement())
+  product Product @relation(fields: [idProduct], references: [idProduct])
+  idProduct Int @unique
+  qtdPointsProduct Int
+  dateBeginning DateTime
+  dateEnd DateTime
+  tittle String
+  info String
+}

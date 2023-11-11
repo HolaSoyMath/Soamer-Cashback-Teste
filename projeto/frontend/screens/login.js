@@ -11,9 +11,13 @@ import ButtonEntrar from '../src/components/button/buttonEntrar.js'
 
 export default function Login(props){
 
-  let [fontsLoaded] = useFonts({
-    'Poppins': require('../src/fonts/poppins/Poppins-Black.ttf'),
-  }); 
+  let cpf;
+  let senha;
+
+  let getLogin = ({cpf, senha}) => {
+    fetch("https://soamer-api.onreader.com/login?cpf=111.111.111-11&password=123456");
+    props.navigation.navigate("Home");
+  }
 
   return(
     <View style={styles.principal}>
@@ -34,13 +38,13 @@ export default function Login(props){
           <Text style={stylesBody.textoSubTitulo}>Aqui cada venda vale cashback</Text>
         </View>
         <View>
-          <InputLogin icone={imgPerfil} texto={'CPF'} teclado="numeric"></InputLogin>
+          <InputLogin icone={imgPerfil} texto={'CPF'} teclado="numeric" value={cpf}/>
         </View>
         <View style={{marginTop: 30}}>
-          <InputLogin icone={imgSenha} texto={'Senha'} senha={true}></InputLogin>
+          <InputLogin icone={imgSenha} texto={'Senha'} senha={true} value={senha}/>
         </View>
         <View style={{marginTop: 50}}>
-          <ButtonEntrar texto='Entrar' props={props} nmTela='AlterarSenha' />
+          <ButtonEntrar texto='Entrar' login={cpf} password={senha} />
         </View>
       </View>
       <Image source={imgInferior} style={stylesBody.imgInferior}/>

@@ -1,11 +1,12 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native' 
+import getLogin from "../../../screens/login.js"
 
-export default function ButtonEntrar({texto, nmTela, props}){
+export default function ButtonEntrar({texto, login, password}){
 
   return(
     <TouchableOpacity 
     style={stylesBody.containerEntrar} 
-    onPress={() => props.navigation.navigate(nmTela)}
+    onPress={() => getLogin(login, password)}
     >
       <Text style={stylesBody.textoBotao}>{texto}</Text>
     </TouchableOpacity>

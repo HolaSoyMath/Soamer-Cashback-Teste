@@ -18,9 +18,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const ButtonTrocar = ({title, onPress, style }) => {
+const ButtonTrocar = ({title, trocar, style }) => {
   return (
-    <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
+    <TouchableOpacity style={[styles.button, style]} onPress={trocar}>
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
